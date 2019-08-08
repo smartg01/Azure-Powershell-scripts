@@ -1,0 +1,62 @@
+{
+  "id": "/subscriptions/050ae540-b9e1-43fc-a6d6-35e0c344ca09/resourceGroups/MetaldecksAzure/providers/Microsoft.Resources/deployments/Microsoft.StorageAccount-20190809081510",
+  "name": "Microsoft.StorageAccount-20190809081510",
+  "properties": {
+    "templateHash": "2311200201480365534",
+    "parameters": {
+      "location": {
+        "type": "String",
+        "value": "australiacentral"
+      },
+      "storageAccountName": {
+        "type": "String",
+        "value": "metaldecksazureblob01"
+      },
+      "accountType": {
+        "type": "String",
+        "value": "Standard_LRS"
+      },
+      "kind": {
+        "type": "String",
+        "value": "BlobStorage"
+      },
+      "accessTier": {
+        "type": "String",
+        "value": "Hot"
+      },
+      "supportsHttpsTrafficOnly": {
+        "type": "Bool",
+        "value": true
+      }
+    },
+    "mode": "Incremental",
+    "debugSetting": {
+      "detailLevel": "None"
+    },
+    "provisioningState": "Succeeded",
+    "timestamp": "2019-08-08T20:22:29.6582643Z",
+    "duration": "PT22.9465541S",
+    "correlationId": "21176fb5-9607-4bf1-8117-44650b7ed970",
+    "providers": [
+      {
+        "namespace": "Microsoft.Storage",
+        "resourceTypes": [
+          {
+            "resourceType": "storageAccounts",
+            "locations": [
+              "australiacentral"
+            ]
+          }
+        ]
+      }
+    ],
+    "dependencies": [],
+    "outputs": {},
+    "outputResources": [
+      {
+        "id": "/subscriptions/050ae540-b9e1-43fc-a6d6-35e0c344ca09/resourceGroups/MetaldecksAzure/providers/Microsoft.Storage/storageAccounts/metaldecksazureblob01"
+      }
+    ],
+    "validationLevel": "Template"
+  }
+}
