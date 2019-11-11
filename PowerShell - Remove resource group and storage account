@@ -1,0 +1,11 @@
+### Remove storage account ###
+Remove-AzureRmStorageAccount `
+      [-ResourceGroupName] <String> `
+      [-Name] <String> `
+      [-Force]
+     
+###Remove resource group###
+
+Remove-AzureRmResourceGroup `
+      [-Name] <String> `
+      [-Force]
