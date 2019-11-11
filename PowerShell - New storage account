@@ -1,0 +1,16 @@
+# Get list of locations and select one.
+$location = "Australia Central"
+
+# Create a new resource group.
+$resourceGroup = "DHSteelAppStorage01"
+New-AzResourceGroup -Name $resourceGroup -Location $location
+
+# Set the name of the storage account and the SKU name.
+$storageAccountName = "dhsteelappstorage01"
+$skuName = "Standard_RAGRS"
+
+# Create the storage account.
+New-AzStorageAccount -ResourceGroupName $ResourceGroup `
+  -Name $storageAccountName `
+  -Location $location `
+  -SkuName $skuName 
