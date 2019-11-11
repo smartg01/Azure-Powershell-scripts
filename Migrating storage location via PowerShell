@@ -1,0 +1,26 @@
+###Connect to Azure envrirontment###
+Connect-AzAccount
+###Follow instructions of signing via code###
+
+###If your identity is associated with more than one subscription, then set your active subscription to subscription of the storage account that you want to move###
+$context = Get-AzSubscription -SubscriptionId <subscription-id>
+Set-AzContext $context
+
+###Export the template of your source storage account. These commands save a json template to your current directory###
+$resource = Get-AzResource `
+  -ResourceGroupName <resource-group-name> `
+  -ResourceName <storage-account-name> `
+  -ResourceType Microsoft.Storage/storageAccounts
+  
+Export-AzResourceGroup `
+  -ResourceGroupName <resource-group-name> `
+  -Resource $resource.ResourceId
+  
+  
+##submit template for new storage account###
+  
+$resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
+$location = Read-Host -Prompt "Enter the location (i.e. centralus)"
+
+New-AzResourceGroup -Name $resourceGroupName -Location "$location"
+New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri "<name of your local template file>"
